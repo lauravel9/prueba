@@ -5,7 +5,8 @@ CREATE TABLE Owners(
     LastNames VARCHAR(50),
     Email VARCHAR(100),
     Address VARCHAR(100),
-    Phone VARCHAR(25)
+    Phone VARCHAR(25),
+    Status ENUM('Active', 'Desactive')
 );
 
 CREATE TABLE Vets(
@@ -13,7 +14,8 @@ CREATE TABLE Vets(
     Name VARCHAR(120),
     Phone VARCHAR(25),
     Address VARCHAR(30),
-    Email VARCHAR(100)
+    Email VARCHAR(100),
+    Status ENUM('Active', 'Desactive')
 );
 
 CREATE TABLE Pets (
@@ -23,6 +25,7 @@ CREATE TABLE Pets (
     Race ENUM('male ', 'female'),
     DateBirth DATE,
     Photo TEXT,
+    Status ENUM('Active', 'Desactive'),
     OwnerId INT,
     FOREIGN KEY (OwnerId) REFERENCES Owners(Id)
 );
@@ -33,8 +36,9 @@ CREATE TABLE Quotes(
     PetId INT,
     VetId INT,
     Descripcion TEXT,
+    Status ENUM('Active', 'Desactive'),
     FOREIGN KEY (PetId) REFERENCES Pets(Id),
     FOREIGN KEY (VetId) REFERENCES Vets(Id)
 )
 
-DROP TABLE Quotes;
+DROP TABLE Owners;

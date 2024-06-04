@@ -5,28 +5,26 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using prueba.Services.Owner;
+using prueba.Models;
 
 namespace prueba.Controllers.Owners
 {
-    [Route("[controller]")]
-    public class OwnerListController : Controller
+    [ApiController]
+    [Route("Prueba/list")]
+    public class OwnerListController : ControllerBase
     {
-        private readonly ILogger<OwnerListController> _logger;
-
-        public OwnerListController(ILogger<OwnerListController> logger)
+       private readonly IOwnerRepository _ownerRepository;
+        public OwnerListController(IOwnerRepository citaRepository)
         {
-            _logger = logger;
+            _ownerRepository = OwnerRepository; 
+        
         }
-
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View("Error!");
-        }
+        
+        [HttpGet]
+        public IEnumerable<Owner> Get()
+            {
+                return _ownerRepository.GetAll();
+            }
     }
 }

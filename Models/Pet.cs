@@ -7,8 +7,10 @@ namespace prueba.Models
         public string? Specie { get; set; }
         public string? Race { get; set; }
         public DateTime DateBirth { get; set; }
-        public string? Phote { get; set; }
+        public string? Photo { get; set; }
+        public string? Status { get; set; }
         public int OwnerId { get; set; }
         public Owner? Owner { get; set; }
+        
     }
 }
