@@ -5,28 +5,28 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using prueba.Services.Owners;
+using prueba.Models;
+
 
 namespace prueba.Controllers.Owners
 {
-    [Route("[controller]")]
-    public class OwnerCreateController : Controller
+    public class OwnerCreateController : ControllerBase
     {
-        private readonly ILogger<OwnerCreateController> _logger;
-
-        public OwnerCreateController(ILogger<OwnerCreateController> logger)
+        private readonly IOwnerRepository _ownerRepository;
+        public OwnerCreateController(IOwnerRepository ownerRepository)
         {
-            _logger = logger;
+            _ownerRepository = ownerRepository; 
+        
         }
 
-        public IActionResult Index()
+        
+        [HttpPost]
+        [Route("Owner/Create")]
+        public IActionResult Create([FromBody] Owner owner)
         {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View("Error!");
+            _ownerRepository.CreateOwner(owner);
+            return Ok();
         }
     }
 }

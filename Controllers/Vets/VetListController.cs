@@ -11,22 +11,9 @@ namespace prueba.Controllers.Vets
     [Route("[controller]")]
     public class VetListController : Controller
     {
-        private readonly ILogger<VetListController> _logger;
+        
 
-        public VetListController(ILogger<VetListController> logger)
-        {
-            _logger = logger;
-        }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View("Error!");
-        }
+        
     }
 }

@@ -11,22 +11,9 @@ namespace prueba.Controllers.Quotes
     [Route("[controller]")]
     public class QuoteCreateController : Controller
     {
-        private readonly ILogger<QuoteCreateController> _logger;
+        
 
-        public QuoteCreateController(ILogger<QuoteCreateController> logger)
-        {
-            _logger = logger;
-        }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View("Error!");
-        }
+        
     }
 }

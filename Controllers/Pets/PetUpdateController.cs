@@ -11,22 +11,9 @@ namespace prueba.Controllers.Pets
     [Route("[controller]")]
     public class PetUpdateController : Controller
     {
-        private readonly ILogger<PetUpdateController> _logger;
+        
 
-        public PetUpdateController(ILogger<PetUpdateController> logger)
-        {
-            _logger = logger;
-        }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View("Error!");
-        }
+        
     }
 }

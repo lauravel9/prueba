@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using prueba.Models;
+using prueba.Services.Owners;
 
-namespace prueba.Services.Owner
+
+namespace prueba.Services.Owners
 {
     public interface IOwnerRepository
     {
         IEnumerable<Owner> GetAll(); //LIST
         Task<Owner> CreateOwner(Owner owner); //CREATE
-        void updatedOwner(Owner owner); // UPDATE
-        void RemoveOwner (int Id); // REMOVE
+        void UpdateOwner(Owner owner); // UPDATE
+        void RemoveOwner(int Id); // REMOVE
     }
 }

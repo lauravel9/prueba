@@ -5,28 +5,23 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using prueba.Models;
+using prueba.Services.Owners;
 
 namespace prueba.Controllers.Owners
 {
-    [Route("[controller]")]
-    public class OwnerRemoveController : Controller
+    public class OwnerRemoveController : ControllerBase
     {
-        private readonly ILogger<OwnerRemoveController> _logger;
-
-        public OwnerRemoveController(ILogger<OwnerRemoveController> logger)
+        private readonly IOwnerRepository _ownerRepository;
+        public OwnerRemoveController(IOwnerRepository ownerRepository)
         {
-            _logger = logger;
+            _ownerRepository = ownerRepository;
         }
-
-        public IActionResult Index()
+        [HttpDelete("Owner/remove/{Id}")]
+        public IActionResult RemoveOwner (int Id)
         {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View("Error!");
+            _ownerRepository.RemoveOwner(Id);
+            return Ok();
         }
     }
 }
