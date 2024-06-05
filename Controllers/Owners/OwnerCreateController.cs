@@ -17,9 +17,7 @@ namespace prueba.Controllers.Owners
         public OwnerCreateController(IOwnerRepository ownerRepository)
         {
             _ownerRepository = ownerRepository; 
-        
         }
-
         
         [HttpPost]
         [Route("Owner/Create")]

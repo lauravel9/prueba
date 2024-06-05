@@ -14,7 +14,7 @@ namespace prueba.Controllers.Owners
     [Route("Owner/list")]
     public class OwnerListController : ControllerBase
     {
-       private readonly IOwnerRepository _ownerRepository;
+        private readonly IOwnerRepository _ownerRepository;
         public OwnerListController(IOwnerRepository ownerRepository)
         {
             _ownerRepository = ownerRepository; 

@@ -5,16 +5,26 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using prueba.Services.Pets;
+using prueba.Models;
 
 namespace prueba.Controllers.Pets
 {
-    [Route("[controller]")]
-    public class PetCreateController : Controller
-    {
+    public class PetCreateController : ControllerBase
+    {   
+        private readonly IPetRepository _petRepository;
+        public PetCreateController(IPetRepository petRepository)
+        {
+            _petRepository = petRepository; 
+        }
         
-
-
-
+        [HttpPost]
+        [Route("Pet/Create")]
+        public IActionResult Create([FromBody] Pet pet)
+        {
+            _petRepository.CreatePet(pet);
+            return Ok();
+        }
         
     }
 }
