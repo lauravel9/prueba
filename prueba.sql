@@ -22,7 +22,7 @@ CREATE TABLE Pets (
     Id INT PRIMARY KEY AUTO_INCREMENT,
     Name VARCHAR(125),
     Specie ENUM('Dog', 'Cat', 'Hamster'),
-    Race ENUM('male ', 'female'),
+    Race ENUM('BUldog', 'Golden retriver', 'Doberman', 'pastor aleman', 'Husky', 'chow chow', 'Chihuahua', 'Border collie'),
     DateBirth DATE,
     Photo TEXT,
     Status ENUM('Active', 'Desactive'),
@@ -41,4 +41,4 @@ CREATE TABLE Quotes(
     FOREIGN KEY (VetId) REFERENCES Vets(Id)
 )
 
-DROP TABLE Owners;
+DROP TABLE Pets;
