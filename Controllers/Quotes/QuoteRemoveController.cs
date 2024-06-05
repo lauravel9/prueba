@@ -10,7 +10,6 @@ using prueba.Models;
 
 namespace prueba.Controllers.Quotes
 {
-    [Route("[controller]")]
     public class QuoteRemoveController : ControllerBase
     {
         private readonly IQuoteRepository _quoteRepository;
