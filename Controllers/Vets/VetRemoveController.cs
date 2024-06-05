@@ -17,7 +17,7 @@ namespace prueba.Controllers.Vets
         {
             _vetRepository = vetRepository;
         }
-        [HttpDelete("Owner/remove/{Id}")]
+        [HttpDelete("Vet/remove/{Id}")]
         public IActionResult RemoveVet (int Id)
         {
             _vetRepository.RemoveVet(Id);

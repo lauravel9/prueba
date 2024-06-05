@@ -12,7 +12,7 @@ namespace prueba.Services.Quotes
     {
         IEnumerable<Quote> GetAll(); //LIST
         Task<Quote> CreateQuote(Quote quote); //CREATE
-        void UpdateQuote(Quote quote); // UPDATE
+        void UpdateQuote(int Id, Quote quote); // UPDATE
         void RemoveQuote(int Id); // REMOVE
     }
 }

@@ -10,7 +10,6 @@ using prueba.Services.Pets;
 
 namespace prueba.Controllers.Pets
 {
-    [Route("[controller]")]
     public class PetRemoveController : ControllerBase
     {
         private readonly IPetRepository _petRepository;

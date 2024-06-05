@@ -38,25 +38,31 @@ namespace prueba.Services.Quotes
         
 
         //update
-        public void UpdateQuote(Quote quote)
-        {
-            var quoteUpdate = _Quotes.Find(b => b.Id == quote.Id);
-            if (quote != null)
-            {
-                quoteUpdate.Id = quote.Id;
-                quoteUpdate.Date = quote.Date;
-                quoteUpdate.PetId = quote.PetId;
-                quoteUpdate.VetId = quote.VetId;
-                quoteUpdate.Descripcion = quote.Descripcion;
-                quoteUpdate.Status = quote.Status;
+        // public void UpdateQuote(Quote quote)
+        // {
+        //     var quoteUpdate = _Quotes.Find(b => b.Id == quote.Id);
+        //     if (quote != null)
+        //     {
+        //         quoteUpdate.Id = quote.Id;
+        //         quoteUpdate.Date = quote.Date;
+        //         quoteUpdate.PetId = quote.PetId;
+        //         quoteUpdate.VetId = quote.VetId;
+        //         quoteUpdate.Descripcion = quote.Descripcion;
+        //         quoteUpdate.Status = quote.Status;
 
-                _context.Quotes.Update(quoteUpdate);
-                _context.SaveChanges();
-            }
-            else
-            {
-                throw new KeyNotFoundException("Quote not found");
-            }
+        //         _context.Quotes.Update(quoteUpdate);
+        //         _context.SaveChanges();
+        //     }
+        //     else
+        //     {
+        //         throw new KeyNotFoundException("Quote not found");
+        //     }
+        // }
+        public void UpdateQuote (int Id, Quote quote)
+        {
+            quote.Id = Id;
+            _context.Quotes.Update(quote);
+            _context.SaveChanges();
         }
 
         //REMOVE

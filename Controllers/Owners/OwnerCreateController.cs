@@ -20,7 +20,7 @@ namespace prueba.Controllers.Owners
         }
         
         [HttpPost]
-        [Route("Owner/Create")]
+        [Route("Owner/create")]
         public IActionResult Create([FromBody] Owner owner)
         {
             _ownerRepository.CreateOwner(owner);

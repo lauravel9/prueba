@@ -19,7 +19,7 @@ namespace prueba.Controllers.Pets
         }
         
         [HttpPost]
-        [Route("Pet/Create")]
+        [Route("Pet/create")]
         public IActionResult Create([FromBody] Pet pet)
         {
             _petRepository.CreatePet(pet);

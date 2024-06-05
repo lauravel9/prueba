@@ -19,7 +19,7 @@ namespace prueba.Controllers.Vets
         }
         
         [HttpPost]
-        [Route("Vet/Create")]
+        [Route("Vet/create")]
         public IActionResult Create([FromBody] Vet vet)
         {
             _vetRepository.CreateVet(vet);

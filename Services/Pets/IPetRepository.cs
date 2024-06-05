@@ -11,7 +11,7 @@ namespace prueba.Services.Pets
     {
         IEnumerable<Pet> GetAll(); //LIST
         Task<Pet> CreatePet(Pet pet); //CREATE
-        void UpdatePet(Pet pet); // UPDATE
+        void UpdatePet(int Id, Pet pet); // UPDATE
         void RemovePet(int Id); // REMOVE
     }
 }

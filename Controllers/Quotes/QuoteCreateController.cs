@@ -10,7 +10,6 @@ using prueba.Models;
 
 namespace prueba.Controllers.Quotes
 {
-    
     public class QuoteCreateController : ControllerBase
     {
         private readonly IQuoteRepository _quoteRepository;
@@ -20,7 +19,7 @@ namespace prueba.Controllers.Quotes
         }
         
         [HttpPost]
-        [Route("Quote/Create")]
+        [Route("Quote/create")]
         public IActionResult Create([FromBody] Quote quote)
         {
             _quoteRepository.CreateQuote(quote);

@@ -10,5 +10,15 @@ using prueba.Models;
 
 namespace prueba.Controllers.Owners
 {
-    
+    public class OwnerUpdateController : ControllerBase
+    {
+        private readonly IOwnerRepository _ownerRepository;
+        public OwnerUpdateController(IOwnerRepository ownerRepository)
+        {
+            _ownerRepository = ownerRepository;
+        }
+
+        [HttpPut("Owner/update{Id}")]
+        public void UpdateOwner(int Id, [FromBody] Owner owner) => _ownerRepository.UpdateOwner(Id, owner);
+    }
 }

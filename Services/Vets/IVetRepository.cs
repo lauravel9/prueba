@@ -11,7 +11,7 @@ namespace prueba.Services.Vets
     {
         IEnumerable<Vet> GetAll(); //LIST
         Task<Vet> CreateVet(Vet vet); //CREATE
-        void UpdateVet(Vet vet); // UPDATE
+        void UpdateVet(int Id, Vet vet); // UPDATE
         void RemoveVet(int Id); // REMOVE
     }
 }

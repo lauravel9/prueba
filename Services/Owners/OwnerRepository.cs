@@ -38,26 +38,34 @@ namespace prueba.Services.Owners
         
 
         //update
-        public void UpdateOwner(Owner owner)
-        {
-            var ownerUpdate = _Owners.Find(b => b.Id == owner.Id);
-            if (owner != null)
-            {
-                ownerUpdate.Id = owner.Id;
-                ownerUpdate.Names = owner.Names;
-                ownerUpdate.LastNames = owner.LastNames;
-                ownerUpdate.Email = owner.Email;
-                ownerUpdate.Address = owner.Address;
-                ownerUpdate.Phone = owner.Phone;
-                ownerUpdate.Status = owner.Status;
+        // public void UpdateOwner(Owner owner)
+        // {
+        //     var ownerUpdate = _Owners.Find(b => b.Id == owner.Id);
+        //     if (owner != null)
+        //     {
+        //         ownerUpdate.Id = owner.Id;
+        //         ownerUpdate.Names = owner.Names;
+        //         ownerUpdate.LastNames = owner.LastNames;
+        //         ownerUpdate.Email = owner.Email;
+        //         ownerUpdate.Address = owner.Address;
+        //         ownerUpdate.Phone = owner.Phone;
+        //         ownerUpdate.Status = owner.Status;
 
-                _context.Owners.Update(ownerUpdate);
-                _context.SaveChanges();
-            }
-            else
-            {
-                throw new KeyNotFoundException("Owner not found");
-            }
+        //         _context.Owners.Update(ownerUpdate);
+        //         _context.SaveChanges();
+        //     }
+        //     else
+        //     {
+        //         throw new KeyNotFoundException("Owner not found");
+        //     }
+        // }
+
+
+        public void UpdateOwner (int Id, Owner owner)
+        {
+            owner.Id = Id;
+            _context.Owners.Update(owner);
+            _context.SaveChanges();
         }
 
         //REMOVE

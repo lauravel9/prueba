@@ -38,28 +38,35 @@ namespace prueba.Services.Pets
         
 
         //update
-        public void UpdatePet(Pet pet)
-        {
-            var petUpdate = _Pets.Find(b => b.Id == pet.Id);
-            if (pet != null)
-            {
-                petUpdate.Id = pet.Id;
-                petUpdate.Name = pet.Name;
-                petUpdate.Specie = pet.Specie;
-                petUpdate.Race = pet.Race;
-                petUpdate.DateBirth = pet.DateBirth;
-                petUpdate.Photo = pet.Photo;
-                petUpdate.Status = pet.Status;
-                petUpdate.OwnerId = pet.OwnerId;
+        // public void UpdatePet(Pet pet)
+        // {
+        //     var petUpdate = _Pets.Find(b => b.Id == pet.Id);
+        //     if (pet != null)
+        //     {
+        //         petUpdate.Id = pet.Id;
+        //         petUpdate.Name = pet.Name;
+        //         petUpdate.Specie = pet.Specie;
+        //         petUpdate.Race = pet.Race;
+        //         petUpdate.DateBirth = pet.DateBirth;
+        //         petUpdate.Photo = pet.Photo;
+        //         petUpdate.Status = pet.Status;
+        //         petUpdate.OwnerId = pet.OwnerId;
 
-                _context.Pets.Update(petUpdate);
-                _context.SaveChanges();
-            }
-            else
-            {
-                throw new KeyNotFoundException("Pet not found");
-            }
+        //         _context.Pets.Update(petUpdate);
+        //         _context.SaveChanges();
+        //     }
+        //     else
+        //     {
+        //         throw new KeyNotFoundException("Pet not found");
+        //     }
+        // }
+        public void UpdatePet (int Id, Pet pet)
+        {
+            pet.Id = Id;
+            _context.Pets.Update(pet);
+            _context.SaveChanges();
         }
+
 
         //REMOVE
         public void RemovePet(int Id)

@@ -38,26 +38,32 @@ namespace prueba.Services.Vets
         
 
         //update
-        public void UpdateVet(Vet vet)
-        {
-            var vetUpdate = _Vets.Find(b => b.Id == vet.Id);
-            if (vet != null)
-            {
-                vetUpdate.Id = vet.Id;
-                vetUpdate.Name = vet.Name;
-                vetUpdate.Phone = vet.Phone;
-                vetUpdate.Address = vet.Address;
-                vetUpdate.Email = vet.Email;
-                vetUpdate.Status = vet.Status;
+        // public void UpdateVet(Vet vet)
+        // {
+        //     var vetUpdate = _Vets.Find(b => b.Id == vet.Id);
+        //     if (vet != null)
+        //     {
+        //         vetUpdate.Id = vet.Id;
+        //         vetUpdate.Name = vet.Name;
+        //         vetUpdate.Phone = vet.Phone;
+        //         vetUpdate.Address = vet.Address;
+        //         vetUpdate.Email = vet.Email;
+        //         vetUpdate.Status = vet.Status;
 
                 
-                _context.Vets.Update(vetUpdate);
-                _context.SaveChanges();
-            }
-            else
-            {
-                throw new KeyNotFoundException("Vet not found");
-            }
+        //         _context.Vets.Update(vetUpdate);
+        //         _context.SaveChanges();
+        //     }
+        //     else
+        //     {
+        //         throw new KeyNotFoundException("Vet not found");
+        //     }
+        // }
+        public void UpdateVet (int Id, Vet vet)
+        {
+            vet.Id = Id;
+            _context.Vets.Update(vet);
+            _context.SaveChanges();
         }
 
         //REMOVE

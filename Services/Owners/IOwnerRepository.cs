@@ -12,7 +12,7 @@ namespace prueba.Services.Owners
     {
         IEnumerable<Owner> GetAll(); //LIST
         Task<Owner> CreateOwner(Owner owner); //CREATE
-        void UpdateOwner(Owner owner); // UPDATE
+        void UpdateOwner(int Id, Owner owner); // UPDATE
         void RemoveOwner(int Id); // REMOVE
     }
 }
