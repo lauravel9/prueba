@@ -73,5 +73,14 @@ namespace prueba.Services.Quotes
             _context.Quotes.Update(quote);
             _context.SaveChanges();
         }
+
+        //RECOVER
+        public void RecoverQuote (int Id)
+        {
+            var recover = _context.Quotes.Find(Id);
+            recover.Status = "Active";
+            _context.Quotes.Update(recover);
+            _context.SaveChanges();
+        }
     }
 }

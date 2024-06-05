@@ -14,5 +14,6 @@ namespace prueba.Services.Quotes
         Task<Quote> CreateQuote(Quote quote); //CREATE
         void UpdateQuote(int Id, Quote quote); // UPDATE
         void RemoveQuote(int Id); // REMOVE
+        void RecoverQuote (int Id);// STATUS
     }
 }
